@@ -2,13 +2,13 @@ import './BaseLayout.css';
 import { useMachine } from '@xstate/react';
 import { Nav } from '../Components/Nav';
 import { StepsLayout } from './StepsLayout';
-import { bookingMachine } from '../Machines/bookingMachine';
+import bookingMachine from '../Machines/bookingMachine';
 
 
 export const BaseLayout = () => {
   const [state, send] = useMachine(bookingMachine);
 
-  console.log('nuestra maquina', state.value);
+  console.log('nuestra maquina', state.value, state.context);
 
   return (
     <div className='BaseLayout'>
